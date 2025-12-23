@@ -106,4 +106,27 @@ contactForm?.addEventListener('submit', async (event) => {
   }
 });
 
+// Make project cards clickable - navigate to live demo on click
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card) => {
+  // Find the "Live Demo" link within this card
+  const liveDemoLink = card.querySelector('a[href*="https://"]');
+
+  if (liveDemoLink) {
+    // Make the card clickable
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', (event) => {
+      // Don't trigger if user clicked directly on a link or button
+      if (event.target.tagName === 'A' || event.target.closest('a')) {
+        return;
+      }
+
+      // Navigate to the live demo URL
+      window.open(liveDemoLink.href, '_blank', 'noopener,noreferrer');
+    });
+  }
+});
+
 initTheme();
+

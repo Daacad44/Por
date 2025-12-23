@@ -1,0 +1,17 @@
+/* Interactive project card enhancements */
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+html:not(.dark) .project-card:hover {
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.25);
+}
+
+html.dark .project-card:hover {
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.7);
+}
